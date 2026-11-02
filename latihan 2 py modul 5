@@ -1,0 +1,34 @@
+# Kaysea Alva Hidayat
+# 065002600036
+# Praktikum Algoritma Pemrograman Modul 5
+
+def harga_tiket (umur):
+    if umur <= 2:
+        return 0
+    elif umur <= 12:
+        return 14
+    elif umur >= 65:
+        return 18
+    else:
+        return 23
+
+total = 0
+
+while True:
+    teks = input("Masukkan umur:").strip()
+    if teks == "":
+        break
+    if not teks.isdigit():
+        print("Umur tidak valid, coba lagi")
+        continue
+    umur = int(teks)
+    harga = harga_tiket(umur)
+
+    if harga == 0:
+        print("Gratis")
+    else:
+        print(f"Harga ${harga:.2f}")
+
+    total += harga
+    print(f"Running total: {total:.2f}")
+
